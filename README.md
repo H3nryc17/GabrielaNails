@@ -1,5 +1,7 @@
 # NailsWebsiteProject
 
+<img src="IMG_0009.jpeg" alt="Nail Portfolio Image" width="400">
+
 PART 1: CONTENT (Answer ALL questions, add your own if necessary)
 
 1. What is the name of your business?
