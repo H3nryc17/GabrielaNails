@@ -1,0 +1,351 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>GabrielaNails | Professional Nail Artist</title> 
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet"> 
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> 
+
+<style> 
+/* This makes sure all browsers start with a 0 margin and padding and has a consistent sizing. */
+* { 
+margin: 0; 
+padding: 0; 
+box-sizing: border-box; 
+} 
+
+/* Background gradient, fixed scroll, and primary font. */
+body { 
+background: linear-gradient(135deg, #ffffff 0%, #fff0f3 100%); 
+background-attachment: fixed; 
+color: #333; 
+line-height: 1.6; 
+font-family: 'Montserrat', sans-serif; 
+overflow-x: hidden; 
+} 
+
+/* This is the top navigation bar with centered links. */
+nav { 
+position: fixed; 
+top: 0; 
+width: 100%; 
+background: rgba(255, 255, 255, 0.95); 
+padding: 15px 0; 
+display: flex; 
+justify-content: center; 
+gap: 25px; 
+z-index: 1000; 
+box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+} 
+
+/* This is a style that I made to give off a high end boutique feeling. */
+nav a { 
+text-decoration: none; 
+color: #d4418e; 
+font-weight: 600; 
+font-size: 0.9rem; 
+text-transform: uppercase; 
+letter-spacing: 1px; 
+cursor: pointer; 
+} 
+
+/*This just gives the basic structure of each page, setting to display, none to hide by default.  */
+section { 
+min-height: 100vh; 
+padding: 100px 20px 60px 20px; 
+display: none; 
+flex-direction: column; 
+align-items: center; 
+text-align: center; 
+width: 100%; 
+} 
+
+/* This is an active class that javascript adds to make a specific section visible. */
+section.active { 
+display: flex; 
+} 
+
+/* This is a typography style that I chose for the headers. */
+h1, h2, h3 { 
+font-family: 'Playfair Display', serif; 
+font-weight: 700; 
+} 
+
+/* This is the style and it uses clamp to scale size based on the screen width. */
+h1 { 
+font-size: clamp(2.8rem, 10vw, 4.5rem); 
+color: #d4418e; 
+margin-bottom: 5px; 
+letter-spacing: -1px; 
+} 
+
+h2 { 
+font-size: clamp(2rem, 6vw, 3rem); 
+color: #ae3373; 
+margin-bottom: 25px; 
+} 
+
+/* This is the secondary text that is under the main title. */
+.tagline { 
+font-size: 1.2rem; 
+letter-spacing: 4px; 
+text-transform: uppercase; 
+color: #666; 
+margin-bottom: 20px; 
+} 
+
+/* Manages layout for button groups */
+.btn-container { 
+display: flex; 
+gap: 15px; 
+margin-top: 35px; 
+flex-wrap: wrap; 
+justify-content: center; 
+} 
+
+/* This is the main button style, gives a square style with hover transitions. */
+.btn { 
+padding: 16px 35px; 
+border: 1px solid #d4418e; 
+border-radius: 4px; 
+background-color: #d4418e; 
+color: white; 
+font-size: 0.9rem; 
+font-weight: 600; 
+letter-spacing: 2px; 
+cursor: pointer; 
+transition: all 0.4s; 
+text-transform: uppercase; 
+min-width: 220px; 
+} 
+
+/* This is the hover and it changes to outline style and moves slightly up */
+.btn:hover { 
+background-color: transparent; 
+color: #d4418e; 
+transform: translateY(-2px); 
+} 
+
+/* This is the outline button, which is the secondary button style (transparent with border) */
+.btn-outline { 
+background-color: transparent; 
+color: #d4418e; 
+} 
+
+.btn-outline:hover { 
+background-color: #d4418e; 
+color: white; 
+} 
+
+/* In this I used a CSS grid auto fit to make a responsive photo layout. */
+.gallery { 
+display: grid; 
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+gap: 30px; 
+width: 100%; 
+max-width: 1200px; 
+margin-top: 40px; 
+} 
+
+/* This is the container for each portfolio image and text */
+.card { 
+background: #fff; 
+padding: 10px; 
+border-radius: 0px; 
+box-shadow: 0 10px 25px rgba(0,0,0,0.03); 
+transition: 0.3s; 
+} 
+
+/* Gives the fixed height with object-fit, which prevents stretching */
+.card img { 
+width: 100%; 
+height: 400px; 
+object-fit: cover; 
+filter: grayscale(10%); 
+transition: 0.5s; 
+} 
+
+/* Removes grayscale filter to give a full color effect. */
+.card:hover img { 
+filter: grayscale(0%); 
+} 
+
+/* This controls the look of the booking inputs. */
+form { 
+background: white; 
+padding: 40px; 
+width: 100%; 
+max-width: 550px; 
+border: 1px solid #eee; 
+} 
+
+input, select { 
+width: 100%; 
+padding: 15px; 
+margin: 10px 0; 
+border: 1px solid #e0e0e0; 
+font-family: 'Montserrat', sans-serif; 
+font-size: 16px; 
+} 
+
+/* This is for mobile devices, to be able to adjust fonts, spacing, image heights to the correct sizing. */
+@media (max-width: 600px) { 
+nav { gap: 15px; } 
+nav a { font-size: 0.75rem; } 
+.btn { width: 100%; } 
+.card img { height: 350px; } 
+} 
+
+.location-text { 
+margin-top: 50px; 
+font-size: 0.9rem; 
+color: #888; 
+letter-spacing: 1px; 
+} 
+</style> 
+</head> 
+<body> 
+
+<nav> 
+<a onclick="showPage('home')">Home</a> 
+<a onclick="showPage('about')">About</a> 
+<a onclick="showPage('gallery')">Work</a> 
+<a onclick="showPage('booking')">Book</a> 
+</nav> 
+
+<section id="home" class="active"> 
+<h1>Gabriela Nails</h1> 
+<p class="tagline">Focus • Creative • Beauty</p> 
+<div class="btn-container"> 
+<button class="btn" onclick="showPage('gallery')">View Gallery</button> 
+<button class="btn btn-outline" onclick="showPage('booking')">Inquiry</button> 
+</div> 
+<p class="location-text"> 
+<i class="fas fa-map-marker-alt"></i> 238-17 88th Ave, New York 
+</p> 
+</section> 
+
+<section id="about"> 
+<h2>Artist: Gabriela Vega</h2> 
+<p style="max-width: 500px; font-weight: 300;">Hi everyone! I am Gabriela Vega and I am certified nail technician with a love and passion for nails. I am currently balancing my studies as a business student and influencer, hoping to inspire others to pursue their creative passions while delivering a luxury experience to every client.</p> 
+<div style="margin-top:30px;"> 
+<p><strong>Contact:</strong> 347-705-4757</p> 
+<a href="https://instagram.com/GabrielaNails" target="_blank" style="color:#d4418e; text-decoration:none; font-weight:600;"> 
+@GABRIELANAILS 
+</a> 
+</div> 
+
+<div class="btn-container"> 
+<button class="btn" onclick="showPage('booking')">Book Your Session</button> 
+</div> 
+</section> 
+
+<section id="gallery"> 
+<h2>Portfolio</h2> 
+<div class="gallery"> 
+<div class="card"> 
+<img src="https://i.ibb.co/hJstXwGG/IMG-3572.jpg" alt="The Classic French"> 
+<h3>The French</h3> 
+<p style="font-size: 0.85rem; color:#999;">BEAUTY & ELEGANT</p> 
+</div> 
+<div class="card"> 
+<img src="https://i.ibb.co/ymwcrGnB/IMG-3573.jpg" alt="Holographic Chrome"> 
+<h3>Chrome</h3> 
+<p style="font-size: 0.85rem; color:#999;">MODERN REFLECTION</p> 
+</div> 
+<div class="card"> 
+<img src="https://i.ibb.co/7d0BCqLg/IMG-3574.jpg" alt="Abstract Line Art"> 
+<h3>Abstract</h3> 
+<p style="font-size: 0.85rem; color:#999;">CUSTOM & UNIQUE</p> 
+</div> 
+</div> 
+</section> 
+
+<section id="booking"> 
+<h2>Appointments</h2> 
+<form id="appointmentForm"> 
+<input type="text" id="clientName" placeholder="NAME" required> 
+<select id="serviceType" required> 
+<option value="">SELECT SERVICE</option> 
+<option value="gel">Gel Manicure</option> 
+<option value="acrylic">Full Set Acrylic</option> 
+<option value="art">Custom Nail Art</option> 
+</select> 
+<input type="date" id="appointmentDate" required> 
+<div id="timeSlots" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 15px 0;"></div> 
+
+<button type="submit" class="btn" id="submitBtn" disabled>Check Availability</button> 
+</form> 
+</section> 
+
+<script> 
+// Start of the JavaScript which will ask what time you would like after the date has been set.
+let bookedAppointments = {}; 
+const timeOptions = ["09:00 AM", "12:00 PM", "03:00 PM", "06:00 PM"]; 
+let selectedTime = null; 
+
+// Will hide all sections and display only what the user has requested.
+function showPage(pageId) { 
+const sections = document.querySelectorAll('section'); 
+sections.forEach(section => section.classList.remove('active')); 
+document.getElementById(pageId).classList.add('active'); 
+window.scrollTo(0, 0); 
+} 
+
+const dateInput = document.getElementById('appointmentDate'); 
+const slotsContainer = document.getElementById('timeSlots'); 
+const submitBtn = document.getElementById('submitBtn'); 
+
+// This will active once the user picks a date on the calender.
+dateInput.addEventListener('change', function() { 
+renderSlots(this.value); 
+}); 
+
+// This generates time buttons based on the date the user chooses.
+function renderSlots(date) { 
+slotsContainer.innerHTML = ''; 
+selectedTime = null; 
+submitBtn.disabled = true; 
+
+timeOptions.forEach(time => { 
+const button = document.createElement('div'); 
+button.innerText = time; 
+button.style.padding = '12px'; 
+button.style.border = '1px solid #eee'; 
+button.style.cursor = 'pointer'; 
+button.style.fontSize = '0.8rem'; 
+button.style.letterSpacing = '1px'; 
+
+// It will "disable" or take off time slots if that time has already been booked. 
+if (bookedAppointments[date]?.includes(time)) { 
+button.style.color = '#ccc'; 
+button.style.cursor = 'not-allowed'; 
+} else { 
+// This highlights when a user clicks a time/date.
+button.onclick = () => { 
+document.querySelectorAll('#timeSlots div').forEach(el => { 
+el.style.background = 'white'; 
+el.style.color = '#333'; 
+}); 
+button.style.background = '#d4418e'; 
+button.style.color = 'white'; 
+selectedTime = time; 
+submitBtn.disabled = false; 
+}; 
+} 
+slotsContainer.appendChild(button); 
+}); 
+} 
+
+// This is a form for submission, it gives the user an alert and resets the form.
+document.getElementById('appointmentForm').onsubmit = function(e) { 
+e.preventDefault(); 
+alert(`Request sent for ${dateInput.value} at ${selectedTime}. Gabriela will contact you shortly!`); 
+this.reset(); 
+}; 
+</script> 
+</body> 
+</html>
