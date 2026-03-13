@@ -102,3 +102,61 @@ It will grab appointments from all the users to make sure whenever a new user bo
 5. How does interactivity improve user experience?
 The user will be able to leave feedback on the website using their email which will then pop up and show the reviews on the website to let others know how your experience was.
 
+Project Overview:
+
+A high end single web application desgined for my friend Gabriela Vega, who is a professioanl nail technician and influencer. The purpose of the site is to be a digital portfolio and streamlined booking tool, helping bring out her creativity and business more.
+
+Target Audience:
+
+* Local clients in NY who is looking for a luxery nail service.
+* Brand collaborators and followers from her social media plateform and who want to see her professional evolution.
+* People who want convenience, high value, presonalized influencer to client experience
+  
+Content Strategy:
+
+The strategy used here was visual authority, strong branding with focus on the artist location and name, high quality images to showcase expertise, and to connect her life a a business student and creator into the nails industry.
+
+
+Information Organization
+
+The website uses linear navigation stucture, in one singler file, but divided into different parts.
+Such as:
+Home, About, Work, and Book.
+
+Visual Design
+
+Style: Minimalist Boutique / Editorial.
+
+Color Palette: White, Soft Pink (#fff0f3), and Deep Magenta (#d4418e) for accents.
+
+Typography: A pairing of Playfair Display (classic luxury) and Montserrat (modern clean).
+
+Wireframe Concept:
+
+Desktop: Fixed navigation at the top, wide-grid gallery, and centered form.
+
+Mobile: Responsive "stacked" layout where buttons expand to full width for easy thumb-tapping.
+
+Interaction / Functionality
+
+SPA Navigation: Smooth section switching without page reloads using JavaScript display: flex/none.
+
+Hover Effects: Grayscale-to-color transitions on portfolio images and "lift" animations on buttons.
+
+Dynamic Booking: A real-time availability logic that generates time slots only after a date is selected and disables "booked" times.
+
+Technical Overview
+
+HTML5, CSS3 (specifically Flexbox and Grid), and Vanilla JavaScript.
+Github pages(Utilizing the automated deployment through GitHub actions).
+Local storages within GitHub repository to make sure the uptime and correct path was at 100%.
+Integrating font for icongraphy and google fonts for typography.
+
+Timeline / Project Milestones
+
+Creating a luxery pink theme and font pairing. 
+Coding using logic and responsive HTML, CSS, JavaScript.
+Uploading the images to the website page without it crashing or bugging.
+Setting my Github repository and fixing image pathing.
+Try to make the email like google where if someone chooses that date it will not let another user use that as well. 
+
